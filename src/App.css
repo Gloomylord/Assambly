@@ -27,6 +27,21 @@
   box-sizing: border-box;
 }
 
+.pencil {
+  background: linear-gradient(-210deg, #542774, #3c1a62);
+  min-height: 100vh;
+  background-size: 200% 200%;
+  background-position: -100% center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  box-sizing: border-box;
+}
+
 @media (max-width: 970px)  {
   .App {
     grid-gap: 30px;

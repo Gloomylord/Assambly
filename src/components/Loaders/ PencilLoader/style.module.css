@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.progress {
+    width: 1%;
+    height: 20px;
+    border-radius: 20px;
+    border: 0;
+    background: #c33365;
+    align-self: center;
+    animation: progress 8s infinite;
+    box-shadow: inset 0 0 15px rgba(0,0,0,.3);
+}
+
+.pencilContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: pencil 8s infinite;
+    z-index: 100;
+}
+
+@keyframes pencil {
+    0% {
+        transform: translateX(-18px) translateY(-137px) rotate(-45deg);
+        animation-timing-function: ease-in;
+    }
+    25% {
+        transform: translateX(369px) translateY(-139px) rotate(-45deg);
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: translateX(350px) translateY(-130px) rotate(135deg) ;
+    }
+    75% {
+        transform: translateX(-45px) translateY(-130px) rotate(135deg) ;
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: translateX(-18px) translateY(-137px) rotate(-45deg);
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+        border-radius: 10px;
+        border: 0;
+        animation-timing-function: ease-in;
+    }
+    25% {
+        border-radius: 10px;
+        width: 100%;
+        animation-timing-function: ease-in-out;
+        border: 0;
+    }
+    50% {
+        border-radius: 10px;
+        width: 100%;
+        border: 0;
+    }
+    75% {
+        width: 0%;
+        border-radius: 10px 0 0 10px;
+        animation-timing-function: ease-in;
+        border: 0;
+    }
+    100% {
+        width: 0%;
+        border: 0;
+        border-radius: 10px;
+    }
+}

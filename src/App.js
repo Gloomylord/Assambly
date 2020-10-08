@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './App.css';
 import {
     BrowserRouter as Router,
     Route,
 } from "react-router-dom";
 import Main from "./pages/Main";
-import LaserMain from "./pages/Laser";
+import Pencil from "./pages/Pencil";
+const LaserMain = React.lazy(() => import("./pages/Laser"));
 
 function App() {
     return (
@@ -14,7 +15,12 @@ function App() {
                 <Main/>
             </Route>
             <Route path={'/laser'}>
-                <LaserMain/>
+                <Suspense fallback={''}>
+                    <LaserMain/>
+                </Suspense>
+            </Route>
+            <Route path={'/pencil'}>
+                <Pencil/>
             </Route>
         </Router>
     );
