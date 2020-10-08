@@ -12,6 +12,21 @@
   justify-content: center;
 }
 
+.laser {
+  background: radial-gradient(#54b9d2,#4a5293);
+  background-size: 200% 200%;
+  background-position: -100% center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  box-sizing: border-box;
+}
+
 @media (max-width: 970px)  {
   .App {
     grid-gap: 30px;

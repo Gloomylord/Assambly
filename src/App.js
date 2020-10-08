@@ -1,14 +1,22 @@
 import React from 'react';
 import './App.css';
-import Card from "./components/Card";
+import {
+    BrowserRouter as Router,
+    Route,
+} from "react-router-dom";
+import Main from "./pages/Main";
+import LaserMain from "./pages/Laser";
 
 function App() {
     return (
-        <div className="App">
-            <Card url={'/laser.png'} title={'Лазер'} imgPos={'left center'}/>
-            <Card url={'/img1.jpg'} title={'волк'}/>
-            <Card url={'/animations.png'} title={'анимации'}/>
-        </div>
+        <Router>
+            <Route path={'/'} exact>
+                <Main/>
+            </Route>
+            <Route path={'/laser'}>
+                <LaserMain/>
+            </Route>
+        </Router>
     );
 }
 

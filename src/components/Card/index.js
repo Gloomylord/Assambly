@@ -2,10 +2,11 @@ import React, {useMemo} from 'react';
 import styles from './style.module.css';
 import cn from 'classnames';
 import Tilt from 'react-tilt';
+import {Link} from "react-router-dom";
 
 const gradArr = [ '#f04fa1, #ff5c5f','#f8e189, #f18481','#ea31c2, #6390e9','#55c685, #255286'];
 
-function Card({url, title,imgPos = 'center'}) {
+function Card({link = '#',imgUrl, title,imgPos = 'center'}) {
     let gradMemo = useMemo(()=>{
         return `linear-gradient(-5deg,${gradArr[Math.round(Math.random() * gradArr.length - .5)]})`;
     },[]);
@@ -17,9 +18,10 @@ function Card({url, title,imgPos = 'center'}) {
         reset: true,    // If the tilt effect has to be reset on exit.
         easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
     }}>
+        <Link to={link}>
         <div className={styles.img}
              style={{
-                 '--url': `url(${url})`,
+                 '--url': `url(${imgUrl})`,
                  '--pos': imgPos,
              }}>
             <section className={styles.titleContainer}>
@@ -28,6 +30,7 @@ function Card({url, title,imgPos = 'center'}) {
                 <h3 className={styles.title}>{title}</h3>
             </section>
         </div>
+        </Link>
     </Tilt>
 }
 
